@@ -1,0 +1,490 @@
+==717== Memcheck, a memory error detector
+==717== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==717== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==717== Command: ./a.out
+==717== Parent PID: 418
+==717== 
+--717-- 
+--717-- Valgrind options:
+--717--    --leak-check=full
+--717--    --show-leak-kinds=all
+--717--    --track-origins=yes
+--717--    --verbose
+--717--    --log-file=valgrind-out.txt
+--717-- Contents of /proc/version:
+--717--   Linux version 4.4.0-18362-Microsoft (Microsoft@Microsoft.com) (gcc version 5.4.0 (GCC) ) #1049-Microsoft Thu Aug 14 12:01:00 PST 2020
+--717-- 
+--717-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--717-- Page sizes: currently 4096, max supported 4096
+--717-- Valgrind library directory: /usr/lib/x86_64-linux-gnu/valgrind
+--717-- Reading syms from /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out
+--717-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.31.so
+--717--   Considering /usr/lib/x86_64-linux-gnu/ld-2.31.so ..
+--717--   .. CRC mismatch (computed 387b17ea wanted d28cf5ef)
+--717--   Considering /lib/x86_64-linux-gnu/ld-2.31.so ..
+--717--   .. CRC mismatch (computed 387b17ea wanted d28cf5ef)
+--717--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.31.so ..
+--717--   .. CRC is valid
+--717-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/memcheck-amd64-linux
+--717--    object doesn't have a symbol table
+--717--    object doesn't have a dynamic symbol table
+--717-- Scheduler: using generic scheduler lock implementation.
+--717-- Reading suppressions file: /usr/lib/x86_64-linux-gnu/valgrind/default.supp
+==717== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-717-by-speedyg2-on-???
+==717== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-717-by-speedyg2-on-???
+==717== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-717-by-speedyg2-on-???
+==717== 
+==717== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==717== don't want to do, unless you know exactly what you're doing,
+==717== or are doing some strange experiment):
+==717==   /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=717 ...command...
+==717== 
+==717== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==717==   /path/to/gdb ./a.out
+==717== and then give GDB the following command
+==717==   target remote | /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=717
+==717== --pid is optional if only one valgrind process is running
+==717== 
+==717== error calling PR_SET_PTRACER, vgdb might block
+--717-- REDIR: 0x4022d80 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c9ce2 (???)
+--717-- REDIR: 0x4022b50 (ld-linux-x86-64.so.2:index) redirected to 0x580c9cfc (???)
+--717-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so
+--717--    object doesn't have a symbol table
+--717-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so
+--717--    object doesn't have a symbol table
+==717== WARNING: new redirection conflicts with existing -- ignoring it
+--717--     old: 0x04022d80 (strlen              ) R-> (0000.0) 0x580c9ce2 ???
+--717--     new: 0x04022d80 (strlen              ) R-> (2007.0) 0x0483f060 strlen
+--717-- REDIR: 0x401f560 (ld-linux-x86-64.so.2:strcmp) redirected to 0x483ffd0 (strcmp)
+--717-- REDIR: 0x40232e0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4843a20 (mempcpy)
+--717-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+--717--    object doesn't have a symbol table
+--717-- Reading syms from /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+--717--    object doesn't have a symbol table
+--717-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.31.so
+--717--   Considering /usr/lib/x86_64-linux-gnu/libc-2.31.so ..
+--717--   .. CRC mismatch (computed a6f43087 wanted 6555436e)
+--717--   Considering /lib/x86_64-linux-gnu/libc-2.31.so ..
+--717--   .. CRC mismatch (computed a6f43087 wanted 6555436e)
+--717--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.31.so ..
+--717--   .. CRC is valid
+--717-- Reading syms from /usr/lib/x86_64-linux-gnu/libm-2.31.so
+--717--   Considering /usr/lib/x86_64-linux-gnu/libm-2.31.so ..
+--717--   .. CRC mismatch (computed 327d785f wanted 751f5509)
+--717--   Considering /lib/x86_64-linux-gnu/libm-2.31.so ..
+--717--   .. CRC mismatch (computed 327d785f wanted 751f5509)
+--717--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.31.so ..
+--717--   .. CRC is valid
+--717-- REDIR: 0x4af1600 (libc.so.6:memmove) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af0900 (libc.so.6:strncpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af1930 (libc.so.6:strcasecmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af0220 (libc.so.6:strcat) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af0960 (libc.so.6:rindex) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af2dd0 (libc.so.6:rawmemchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4b0de60 (libc.so.6:wmemchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4b0d9a0 (libc.so.6:wcscmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af1760 (libc.so.6:mempcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af1590 (libc.so.6:bcmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af0890 (libc.so.6:strncmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af02d0 (libc.so.6:strcmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af16c0 (libc.so.6:memset) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4b0d960 (libc.so.6:wcschr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af07f0 (libc.so.6:strnlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af03b0 (libc.so.6:strcspn) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af1980 (libc.so.6:strncasecmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af0350 (libc.so.6:strcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af1ad0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4b0f0d0 (libc.so.6:wcsnlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4b0d9e0 (libc.so.6:wcscpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af09a0 (libc.so.6:strpbrk) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af0280 (libc.so.6:index) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af07b0 (libc.so.6:strlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af9d20 (libc.so.6:memrchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af19d0 (libc.so.6:strcasecmp_l) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af1550 (libc.so.6:memchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4b0dab0 (libc.so.6:wcslen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af0c60 (libc.so.6:strspn) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af18d0 (libc.so.6:stpncpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af1870 (libc.so.6:stpcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af2e10 (libc.so.6:strchrnul) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4af1a20 (libc.so.6:strncasecmp_l) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--717-- REDIR: 0x4bd9300 (libc.so.6:__strrchr_avx2) redirected to 0x483ea10 (rindex)
+--717-- REDIR: 0x4aeb260 (libc.so.6:malloc) redirected to 0x483b780 (malloc)
+--717-- REDIR: 0x4bd94d0 (libc.so.6:__strlen_avx2) redirected to 0x483ef40 (strlen)
+--717-- REDIR: 0x4bd5ac0 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x48421e0 (bcmp)
+--717-- REDIR: 0x4bd49d0 (libc.so.6:__strcmp_avx2) redirected to 0x483fed0 (strcmp)
+--717-- REDIR: 0x4af1120 (libc.so.6:__GI_strstr) redirected to 0x4843ca0 (__strstr_sse2)
+--717-- REDIR: 0x48fcc70 (libstdc++.so.6:operator new[](unsigned long)) redirected to 0x483c510 (operator new[](unsigned long))
+--717-- REDIR: 0x48fcc10 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x483bdf0 (operator new(unsigned long))
+--717-- REDIR: 0x48fae90 (libstdc++.so.6:operator delete[](void*)) redirected to 0x483d6e0 (operator delete[](void*))
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x1096FE: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x4dac1d0 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x1096FE: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x4dacd00 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x1096FE: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x4dac9e0 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+--717-- REDIR: 0x4bdc4c0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4843660 (mempcpy)
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109776: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x641b580 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109776: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x6417fe0 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109776: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x609c0f0 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109776: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10958F: main (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x4da9f60 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10958F: main (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+--717-- REDIR: 0x4aeb850 (libc.so.6:free) redirected to 0x483c9d0 (free)
+==717== 
+==717== HEAP SUMMARY:
+==717==     in use at exit: 0 bytes in 0 blocks
+==717==   total heap usage: 99,121 allocs, 99,121 frees, 16,947,704 bytes allocated
+==717== 
+==717== All heap blocks were freed -- no leaks are possible
+==717== 
+==717== ERROR SUMMARY: 49558 errors from 7 contexts (suppressed: 0 from 0)
+==717== 
+==717== 1 errors in context 1 of 7:
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109776: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10958F: main (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x4da9f60 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10958F: main (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== 
+==717== 3 errors in context 2 of 7:
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109776: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x609c0f0 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== 
+==717== 8 errors in context 3 of 7:
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109776: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x6417fe0 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== 
+==717== 48 errors in context 4 of 7:
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109776: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x641b580 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== 
+==717== 11861 errors in context 5 of 7:
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x1096FE: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x4dac9e0 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== 
+==717== 16476 errors in context 6 of 7:
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x1096FE: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x4dac1d0 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== 
+==717== 21161 errors in context 7 of 7:
+==717== Mismatched free() / delete / delete []
+==717==    at 0x483D74F: operator delete[](void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x1096FE: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==  Address 0x4dacd00 is 0 bytes inside a block of size 16 alloc'd
+==717==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==717==    by 0x109968: possibilities(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109809: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10973D: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x109799: backtrack(Boards_Array*) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717==    by 0x10981F: solve_board(Board&) (in /mnt/c/Users/Merlin/Documents/TAMU/CSCE121/Coding Assignments/[PRACTICE EXAM] Practice Exam 1 Starter Code/Sudoku/a.out)
+==717== 
+==717== ERROR SUMMARY: 49558 errors from 7 contexts (suppressed: 0 from 0)
